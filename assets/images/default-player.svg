@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop stop-color="#0ea5ff" offset="0"/>
+      <stop stop-color="#7c3aed" offset="1"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#f3f6fb" />
+  <g transform="translate(100,40)">
+    <rect x="0" y="0" width="600" height="400" rx="16" fill="url(#g)" opacity="0.18"></rect>
+    <g transform="translate(40,30)">
+      <circle cx="110" cy="110" r="80" fill="#e6eef8" />
+      <path d="M50 260c20-40 90-40 110 0" fill="#e6eef8" />
+      <g transform="translate(240,20)">
+        <rect x="0" y="0" width="220" height="40" rx="8" fill="#ffffff" opacity="0.6"></rect>
+        <rect x="0" y="60" width="160" height="20" rx="6" fill="#ffffff" opacity="0.55"></rect>
+        <rect x="0" y="95" width="120" height="20" rx="6" fill="#ffffff" opacity="0.5"></rect>
+      </g>
+    </g>
+  </g>
+  <text x="400" y="420" font-family="Inter, Arial, sans-serif" text-anchor="middle" font-size="20" fill="#0f1724">No player photo yet — add one to assets/images/</text>
+</svg>

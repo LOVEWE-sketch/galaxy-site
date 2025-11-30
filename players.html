@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Our Players - Galaxy Sports Management Ltd</title>
+  <meta name="description" content="Meet the talented footballers represented by Galaxy Sports Management." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/brand.css">
+</head>
+<body>
+  <!-- Hamburger checkbox + label -->
+  <input type="checkbox" id="menu_checkbox">
+  <label for="menu_checkbox">
+    <div></div>
+    <div></div>
+    <div></div>
+  </label>
+
+  <!-- slide-in nav panel -->
+  <nav class="nav-menu">
+    <div class="nav-top">
+      <img src="assets/images/Galaxy Sports Management Ltd Logo.png" alt="Galaxy Sports Management Ltd logo" style="width:44px;height:44px;object-fit:contain;border-radius:8px;background:transparent;" />
+      <h3>Galaxy Sports</h3>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="teams.html">Teams</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-footer">
+      <a class="cta" href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- overlay (label toggles checkbox) -->
+  <label for="menu_checkbox" class="nav-overlay" aria-hidden="true"></label>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="assets/images/Galaxy Sports Management Ltd Logo.png" alt="Galaxy Sports Management Ltd logo" class="brand__logo" style="width:56px;height:56px;object-fit:contain;background:transparent;" />
+        <div class="brand__title">
+          <h1>Galaxy Sports Management Ltd</h1>
+          <p>Player placement • Trials • Academies</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="teams.html">Teams</a>
+        <a href="players.html" class="active">Players</a>
+        <a href="news.html">News</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <h2>Our Players</h2>
+        <p>Meet our roster of talented footballers</p>
+      </section>
+
+      <!-- Player Filters -->
+      <div class="player-filters">
+        <div class="filter-group">
+          <label>Position</label>
+          <select id="position-filter">
+            <option value="">All Positions</option>
+            <option value="GK">Goalkeeper</option>
+            <option value="DF">Defender</option>
+            <option value="MF">Midfielder</option>
+            <option value="FW">Forward</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Age</label>
+          <select id="age-filter">
+            <option value="">All Ages</option>
+            <option value="U18">Under 18</option>
+            <option value="18-23">18-23</option>
+            <option value="24+">24 and above</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Current Club</label>
+          <select id="club-filter">
+            <option value="">All Clubs</option>
+            <!-- Clubs will be populated dynamically -->
+          </select>
+        </div>
+      </div>
+
+      <!-- Role buttons: All / Players / Coaches -->
+      <div class="role-filters" aria-label="Filter by role">
+        <button type="button" data-role="all" class="active">All</button>
+        <button type="button" data-role="player">Players</button>
+        <button type="button" data-role="coach">Coaches</button>
+      </div>
+
+      <!-- Players & Coaches Grid -->
+      <section class="players-grid people-grid" id="peopleGrid">
+        <!-- peopleGrid will be populated dynamically from data/projects.json by js/scripts.js -->
+      </section>
+
+      <!-- Player Success Stories -->
+      <section class="success-stories wide-section">
+        <h3 class="section-title">Success Stories</h3>
+        <div class="stories-grid">
+          <!-- Lisa -->
+          <article class="story-card card" data-club="FC Duisburg" data-country="DE">
+            <img class="player-photo" src="assets/images/lisa germany1.jpg" alt="Lisa - profile photo">
+            <div class="card-body">
+              <h4 class="player-name">Lisa</h4>
+              <p class="journey">Academy Player → Professional Contract</p>
+              <p class="story">From local academy to semi-professional contract with FC Duisburg in just 10 months.</p>
+              <div class="player-meta">
+                <div class="player-club">
+                  <img class="club-logo" src="assets/images/duisbrerg msv museum logo.webp" alt="FC Duisburg logo" width="40" height="40">
+                  <span class="club-name">FC MSV Duisburg</span>
+                </div>
+                <div class="player-nationality">
+                  <img class="country-flag" src="assets/images/germany flag.webp" alt="Germany flag" width="24" height="16">
+                  <span class="country-name">Germany</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Rianna Cyrus -->
+          <article class="story-card card" data-club="Adana" data-country="TR">
+            <img class="player-photo" src="assets/images/Rianna Cyrus.jpg" alt="Rianna Cyrus - profile photo">
+            <div class="card-body">
+              <h4 class="player-name">Rianna Cyrus</h4>
+              <p class="journey">Trial Success → International Transfer</p>
+              <p class="story">Placed with Adana in the Turkish Women's League after a standout trial season.</p>
+              <div class="player-meta">
+                <div class="player-club">
+                  <img class="club-logo" src="assets/images/adana.jpg" alt="Adana logo" width="40" height="40">
+                  <span class="club-name">Adana</span>
+                </div>
+                <div class="player-nationality">
+                  <img class="country-flag" src="assets/images/barbados logo.jpg" alt="Barbados flag" width="24" height="16">
+                  <span class="country-name">Barbados</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Acacia Small -->
+          <article class="story-card card" data-club="Unknown" data-country="GH">
+            <img class="player-photo" src="assets/images/acacia small.jpg" alt="Acacia Small - profile photo">
+            <div class="card-body">
+              <h4 class="player-name">Acacia Small</h4>
+              <p class="journey">Youth Prospect → National Team</p>
+              <p class="story">Developed through our program and progressed to national selection.</p>
+              <div class="player-meta">
+                <div class="player-club">
+                  <img class="club-logo" src="assets/images/Kickstart_FC.svg.png" alt="Club logo placeholder" width="40" height="40">
+                  <span class="club-name">Kickstart FC</span>
+                </div>
+                <div class="player-nationality">
+                  <img class="country-flag" src="assets/images/barbados logo.jpg" alt="Barbados flag" width="24" height="16">
+                  <span class="country-name">Barbados</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Lucy Massaquoi -->
+          <article class="story-card card" data-club="Armenian Club" data-country="LR">
+            <img class="player-photo" src="assets/images/lucy massaquoi liberia cup.jpg" alt="Lucy Massaquoi - profile photo">
+            <div class="card-body">
+              <h4 class="player-name">Lucy Massaquoi</h4>
+              <p class="journey">Professional → National Team</p>
+              <p class="story">Earned contracts across Armenia, Ghana and Liberia, and represents Liberia at international level.</p>
+              <div class="player-meta">
+                <div class="player-club">
+                  <img class="club-logo" src="assets/images/determine girl.png" alt="Determine girls logo" width="40" height="40">
+                  <span class="club-name">Determine Girl</span>
+                </div>
+                <div class="player-nationality">
+                  <img class="country-flag" src="assets/images/LIBERIA LOGO.png" alt="Liberia flag" width="24" height="16">
+                  <span class="country-name">Liberia</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Linda Amoako -->
+          <article class="story-card card" data-club="Unknown" data-country="GH">
+            <img class="player-photo" src="assets/images/Linda amoako.jpg" alt="Linda Amoako - profile photo">
+            <div class="card-body">
+              <h4 class="player-name">Linda Amoako</h4>
+              <p class="journey">Professional → National Team</p>
+              <p class="story">Developed through our program and provided with professional guidance.</p>
+              <div class="player-meta">
+                <div class="player-club">
+                  <img class="club-logo" src="assets/images/AC_Omonia_logo.svg.png" alt="Club logo placeholder" width="40" height="40">
+                  <span class="club-name">Omonia Women</span>
+                </div>
+                <div class="player-nationality">
+                  <img class="country-flag" src="assets/images/ghana  logo.png" alt="Ghana flag" width="24" height="16">
+                  <span class="country-name">Ghana</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cheyenne Burnett -->
+          <article class="story-card card" data-club="Unknown" data-country="US">
+            <img class="player-photo" src="assets/images/C. BURNETT.jpg" alt="Cheyenne Burnett - profile photo">
+            <div class="card-body">
+              <h4 class="player-name">Cheyenne Burnett</h4>
+              <p class="journey">Youth Prospect → National Team</p>
+              <p class="story">Works in line with our project plans and guidance to reach national level.</p>
+              <div class="player-meta">
+                <div class="player-club">
+                  <img class="club-logo" src="assets/images/mk don logo.webp" alt="Club logo placeholder" width="40" height="40">
+                  <span class="club-name">MK Don</span>
+                </div>
+                <div class="player-nationality">
+                  <img class="country-flag" src="assets/images/barbados logo.jpg" alt="Barbados flag" width="24" height="16">
+                  <span class="country-name">Barbados</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- Add additional players below -->
+        </div>
+      </section>
+      <style>
+      .success-stories.wide-section {
+        width: 100%;
+        max-width: 1400px;
+        margin: 2rem auto;
+        padding: 2rem 1rem;
+        background: #f8fafc;
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      }
+      .success-stories .section-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2rem;
+        letter-spacing: 0.02em;
+        color: #1a2236;
+      }
+      .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+      .story-card.card {
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: box-shadow 0.2s;
+        min-height: 480px;
+      }
+      .story-card.card:hover {
+        box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+      }
+      .story-card .player-photo {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-bottom: 1px solid #e5e7eb;
+        background: #e5e7eb;
+      }
+      .story-card .card-body {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      .story-card .player-name {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #1a2236;
+      }
+      .story-card .journey {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2563eb;
+        margin-bottom: 0.5rem;
+      }
+      .story-card .story {
+        font-size: 1rem;
+        color: #374151;
+        margin-bottom: 1rem;
+      }
+      .story-card .player-meta {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        margin-top: auto;
+      }
+      .player-club, .player-nationality {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .club-logo, .country-flag {
+        border-radius: 0.3rem;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+        background: #fff;
+      }
+      .club-name, .country-name {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #1a2236;
+      }
+      @media (max-width: 900px) {
+        .stories-grid {
+          grid-template-columns: 1fr;
+        }
+        .success-stories.wide-section {
+          padding: 1rem 0.5rem;
+        }
+      }
+      </style>
+
+      <!-- Join Us Section -->
+      <section class="join-us-section card">
+        <h3>Join Our Roster</h3>
+        <p>Are you a talented player looking for professional representation? We'd love to hear from you.</p>
+        <div class="requirements">
+          <h4>Requirements:</h4>
+          <ul>
+            <li>Strong technical ability</li>
+            <li>Good character and work ethic</li>
+            <li>Commitment to development</li>
+            <li>Clear career goals</li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <a href="#contact" class="cta">Apply for Representation</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <strong>Galaxy Sports Management Ltd</strong>
+        <div class="copyright">© <span id="yr"></span> All rights reserved</div>
+      </div>
+      <div class="contact-details">
+        Email: info@galaxysports.com • Tel: +357 99641238
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="js/scripts.js"></script>
+  <script>
+    // Enhanced client-side filter: auto-populate clubs, per-card animations, selects & role filter
+    (function(){
+      const roleButtons = document.querySelectorAll('.role-filters button');
+      const peopleGrid = document.getElementById('peopleGrid');
+      let personCards = [];
+
+      // we run initFilters once person-cards exist. listen for custom event fired by scripts.js
+      function whenReady(fn){
+        if(peopleGrid && peopleGrid.querySelectorAll('.person-card').length) return fn();
+        document.addEventListener('playersPopulated', fn, { once: true });
+        // also fallback on DOMContentLoaded if already rendered
+        document.addEventListener('DOMContentLoaded', fn, { once: true });
+      }
+
+      whenReady(function(){
+        personCards = peopleGrid ? Array.from(peopleGrid.querySelectorAll('.person-card')) : [];
+        // Assign a rotating set of animation classes so each card has a slightly different entrance
+        const animClasses = ['anim-1','anim-2','anim-3','anim-4','anim-5','anim-6'];
+        personCards.forEach((card,i)=> card.classList.add(animClasses[i % animClasses.length]));
+
+        // Auto-populate club select from data-club attributes
+        const clubSel = document.getElementById('club-filter');
+        if(clubSel){
+          const clubs = Array.from(new Set(personCards.map(c=> (c.dataset.club||'').trim()).filter(Boolean))).sort();
+          clubs.forEach(club=>{
+            const opt = document.createElement('option'); opt.value = club; opt.textContent = club; clubSel.appendChild(opt);
+          });
+        }
+
+      function setActiveRole(role){
+        roleButtons.forEach(b=> b.classList.toggle('active', b.dataset.role === role));
+        personCards.forEach(card => {
+          const r = card.dataset.role || 'player';
+          card.style.display = (role === 'all' || r === role) ? '' : 'none';
+        });
+      }
+
+        roleButtons.forEach(b=> b.addEventListener('click', ()=> setActiveRole(b.dataset.role)));
+
+      // wire up selects for basic filtering (position/age/club)
+      const posSel = document.getElementById('position-filter');
+      const ageSel = document.getElementById('age-filter');
+
+      function applySelectFilters(){
+        const pos = posSel ? posSel.value : '';
+        const age = ageSel ? ageSel.value : '';
+        const club = clubSel ? clubSel.value : '';
+        personCards.forEach(card => {
+          // respect role filtering first
+          const activeRoleBtn = document.querySelector('.role-filters button.active');
+          const activeRole = activeRoleBtn ? activeRoleBtn.dataset.role : 'all';
+          const r = card.dataset.role || 'player';
+          if(activeRole !== 'all' && r !== activeRole){ card.style.display = 'none'; return; }
+
+          let ok = true;
+          if(pos && card.dataset.position && card.dataset.position !== pos) ok = false;
+          if(age){
+            const a = Number(card.dataset.age) || 0;
+            if(age === 'U18' && a >= 18) ok = false;
+            if(age === '18-23' && (a < 18 || a > 23)) ok = false;
+            if(age === '24+' && a < 24) ok = false;
+          }
+          if(club && card.dataset.club && card.dataset.club !== club) ok = false;
+          card.style.display = ok ? '' : 'none';
+        });
+      }
+
+        [posSel, ageSel, clubSel].forEach(s=> s && s.addEventListener('change', applySelectFilters));
+
+        // initialise
+        setActiveRole('all');
+        applySelectFilters();
+      });
+    })();
+  </script>
+</body>
+</html>

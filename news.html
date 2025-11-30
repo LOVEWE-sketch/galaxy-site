@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>News — Galaxy Sports Management Ltd</title>
+  <meta name="description" content="Latest news, player stories and updates from Galaxy Sports Management Ltd" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/menu.js"></script>
+  <script type="module" src="js/scripts.js"></script>
+</head>
+<body class="page-news">
+  <input type="checkbox" id="menu_checkbox">
+  <label for="menu_checkbox">
+    <div></div>
+    <div></div>
+    <div></div>
+  </label>
+
+  <nav class="nav-menu">
+    <div class="nav-top">
+      <img src="assets/images/Galaxy Sports Management Ltd Logo.png" alt="Galaxy Sports Management Ltd logo" style="width:44px;height:44px;object-fit:contain;border-radius:8px;background:transparent;" />
+      <h3>Galaxy Sports</h3>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="teams.html">Teams</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-footer">
+      <a class="cta" href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <label for="menu_checkbox" class="nav-overlay" aria-hidden="true"></label>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="assets/images/Galaxy Sports Management Ltd Logo.png" alt="Galaxy Sports Management Ltd logo" class="brand__logo" style="width:56px;height:56px;object-fit:contain;background:transparent;" />
+        <div class="brand__title">
+          <h1>Galaxy Sports Management Ltd</h1>
+          <p>Player placement • Trials • Academies</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="teams.html">Teams</a>
+        <a href="players.html">Players</a>
+        <a href="news.html" class="active">News</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <h2>News & Player Stories</h2>
+        <p>Latest announcements and player stories from Galaxy Sports Management</p>
+      </section>
+
+      <!-- News stories (copied from homepage) -->
+      <section id="news">
+        <div class="news-list" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-bottom:18px;">
+          <!-- js/scripts.js will populate this. On this page it will show full story/excerpt without Read-more links and limited to 10 items -->
+        </div>
+      </section>
+
+      <!-- Player stories grid - up to 10 boxes (players then placeholders) -->
+      <section id="player-stories">
+        <h3>Player Stories</h3>
+        <div class="players-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:12px;">
+          <!-- js/scripts.js will populate up to 10 player story boxes here -->
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>
+        <strong>Galaxy Sports Management Ltd</strong>
+        <div class="copyright">© <span id="yr"></span> All rights reserved</div>
+      </div>
+      <div class="contact-details">
+        Email: info@galaxysports.com • Tel: +15799641238
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

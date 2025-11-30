@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galaxy Sports Management Ltd</title>
+  <meta name="description" content="Player placement, trials, academies and career management for male & female footballers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script defer src="js/menu.js"></script>
+  <script type="module" src="js/scripts.js"></script>
+  <style>
+    /* BASE LAYOUT (starter CSS) - expand with Copilot-generated stylesheet */
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#1fb6ff; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --maxw:1200px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; background:linear-gradient(180deg,#061025 0%, #071936 100%); color:#e6eef8}
+    .container{max-width:var(--maxw); margin:0 auto; padding:28px}
+
+    /* Header */
+    header{display:flex; align-items:center; justify-content:space-between; gap:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand__logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:800}
+    .brand__title{line-height:1}
+    .brand__title h1{font-size:18px;margin:0}
+    .brand__title p{margin:0;font-size:12px;color:var(--muted)}
+    nav{display:flex;gap:14px}
+    nav a{color:var(--muted); text-decoration:none; font-weight:600; font-size:14px}
+    .cta{background:var(--accent); color:#05223a; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 460px; gap:28px; align-items:center; margin-top:28px}
+    .hero__left{padding:28px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:18px}
+    .hero h2{margin:0;font-size:34px;line-height:1.05}
+    .hero p{color:var(--muted); margin:12px 0 18px}
+    .hero .actions{display:flex;gap:12px}
+    .card{background:var(--card); padding:18px; border-radius:14px; box-shadow: 0 6px 30px rgba(3,7,18,0.6)}
+    .hero__image{height:380px; border-radius:14px; background-image: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.45)); display:flex; align-items:flex-end; justify-content:flex-start; padding:18px}
+    .hero__image .image-placeholder{width:100%; height:100%; border-radius:12px; background: repeating-linear-gradient(-45deg, rgba(255,255,255,0.02) 0 6px, transparent 6px 12px); display:flex;align-items:center;justify-content:center; color:var(--muted)}
+
+    /* Sections */
+    section{margin-top:24px}
+    .grid-3{display:grid; grid-template-columns: repeat(3,1fr); gap:18px}
+    .team-card, .player-card{padding:14px; border-radius:12px; background:var(--glass)}
+
+    /* Players list */
+    .players{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .player-card img{width:100%; height:160px; object-fit:cover; border-radius:10px}
+    .player-meta{display:flex; justify-content:space-between; align-items:center; margin-top:8px}
+
+    /* News */
+    .news-list{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+
+    footer{margin-top:40px; padding:18px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); display:flex; justify-content:space-between; align-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .players, .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      header{flex-direction:column; align-items:flex-start}
+      nav{flex-wrap:wrap}
+      .players, .grid-3{grid-template-columns:1fr}
+      .hero__image{height:220px}
+      .hero h2{font-size:24px}
+    }
+
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <script defer src="js/menu.js"></script>
+</head>
+<body>
+  <!-- Hamburger checkbox + label -->
+  <input type="checkbox" id="menu_checkbox">
+  <label for="menu_checkbox">
+    <div></div>
+    <div></div>
+    <div></div>
+  </label>
+
+  <!-- slide-in nav panel -->
+  <nav class="nav-menu">
+    <div class="nav-top">
+      <img src="assets/images/Galaxy Sports Management Ltd Logo.png" alt="Galaxy Sports Management Ltd logo" style="width:44px;height:44px;object-fit:contain;border-radius:8px;background:transparent;" />
+      <h3>Galaxy Sports</h3>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="teams.html">Teams</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-footer">
+      <a class="cta" href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- overlay (label toggles checkbox) -->
+  <label for="menu_checkbox" class="nav-overlay" aria-hidden="true"></label>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="assets/images/Galaxy Sports Management Ltd Logo.png" alt="Galaxy Sports Management Ltd logo" class="brand__logo" style="width:56px;height:56px;object-fit:contain;background:transparent;" />
+        <div class="brand__title">
+          <h1>Galaxy Sports Management Ltd</h1>
+          <p>Player placement • Trials • Academies</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="teams.html">Teams</a>
+        <a href="players.html">Players</a>
+        <a href="news.html">News</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+    <section id="home" class="hero">
+      <style>
+        /* Hero image dramatic spin/zoom animation (plays on page load) */
+        .hero__image{will-change:transform,filter; transition:transform .35s ease, filter .35s ease}
+        .hero__image.spin{animation:spinZoom 2.2s cubic-bezier(.2,.9,.3,1) both}
+        @keyframes spinZoom{
+        0%   {transform:rotate(0deg)   scale(.98); filter:grayscale(30%) brightness(.9); opacity:.98}
+        55%  {transform:rotate(220deg) scale(1.06); filter:grayscale(0%)  brightness(1.06); opacity:1}
+        100% {transform:rotate(360deg) scale(1);    filter:grayscale(0%)  brightness(1);    opacity:1}
+        }
+
+        /* small spotlight pulse while animating */
+        .hero__image.spin::after{
+        content:"";
+        position:absolute;
+        inset:0;
+        border-radius:14px;
+        pointer-events:none;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.55) inset;
+        animation:glowPulse 2.2s ease-in-out both;
+        }
+        @keyframes glowPulse{
+        0% { box-shadow: 0 10px 30px rgba(0,0,0,0.45) inset; }
+        50%{ box-shadow: 0 40px 120px rgba(0,0,0,0.65) inset; }
+        100%{ box-shadow: 0 10px 30px rgba(0,0,0,0.45) inset; }
+        }
+      </style>
+
+      <div class="hero__left card">
+        <h2>We build football careers — locally and internationally</h2>
+        <p>Professional representation, trials, academy placements and career management for male and female players. We connect talent with opportunity.</p>
+        <div class="actions">
+        <a class="cta" href="#contact">Get Representation</a>
+        <a href="#services" class="btn btn-ghost">Our Services</a>
+        </div>
+
+        <!-- Quick stats -> could be turned into dynamic counters -->
+        <div style="display:flex; gap:12px; margin-top:18px">
+        <div class="card" style="flex:1; text-align:center; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);">
+          <strong style="display:block; font-size:20px">59+</strong>
+          <small style="color:var(--muted)">Players represented</small>
+        </div>
+        <div class="card" style="flex:1; text-align:center; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);">
+          <strong style="display:block; font-size:20px">40+</strong>
+          <small style="color:var(--muted)">Clubs & Academies</small>
+        </div>
+        </div>
+      </div>
+
+      <div class="hero__image card" style="position:relative; background-image: url('assets/images/Galaxy\ Sports\ Management\ Ltd.jpg'); background-size: cover; background-position: center;">
+        <!-- Hero image -->
+      </div>
+
+      <script>
+        // Play the spin/zoom animation once when the page finishes loading.
+        (function(){
+        const el = document.querySelector('.hero__image');
+        if(!el) return;
+        // small initial state so the animation has context
+        el.style.transform = 'scale(.98)';
+        // when window loaded, add the animation class; remove after animation ends
+        window.addEventListener('load', function onLoad(){
+          el.classList.add('spin');
+          el.addEventListener('animationend', function cleanup(){
+            el.classList.remove('spin');
+            el.style.transform = '';
+          }, { once: true });
+          window.removeEventListener('load', onLoad);
+        });
+        })();
+      </script>
+    </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="card">
+          <h3>About Galaxy Sports Management</h3>
+          <p style="color:var(--muted)">Galaxy Sports Management Ltd is a player-first football agency focused on enabling players to reach their full potential. We provide honest guidance, strategic career planning, and introductions to clubs, academies, and trial opportunities across multiple countries.</p>
+
+          <div class="grid-3" style="margin-top:16px">
+            <div class="team-card">
+              <h4>Our Mission</h4>
+              <p style="color:var(--muted)">Discover, develop and place football talent with integrity and professionalism.</p>
+            </div>
+            <div class="team-card">
+              <h4>Our Values</h4>
+              <p style="color:var(--muted)">Player welfare, transparency, long-term growth, and equal opportunity for all genders.</p>
+            </div>
+            <div class="team-card">
+              <h4>Our History</h4>
+              <p style="color:var(--muted)">Established with a network of club contacts and a hands-on approach to scouting and development.</p>
+            </div>
+          </div>
+           <div class="text-center">
+             <a href="about.html" class="btn btn-primary">Learn More About Us <span class="btn-arrow">→</span></a>
+           </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <h3>Services</h3>
+        <div class="grid-3">
+          <div class="card">
+            <h4>Player Placement</h4>
+            <p style="color:var(--muted)">Placement into professional clubs and semi-pro teams, negotiation of contracts and trials.</p>
+          </div>
+          <div class="card">
+            <h4>Trial Management</h4>
+            <p style="color:var(--muted)">Organising trials, handling logistics, trial scouting reports and feedback loops with clubs.</p>
+          </div>
+          <div class="card">
+            <h4>Academy Partnerships</h4>
+            <p style="color:var(--muted)">Long-term academy placements and development plans for youth players.</p>
+          </div>
+        </div>
+           <div class="text-center">
+             <a href="services.html" class="btn btn-primary">View All Services <span class="btn-arrow">→</span></a>
+           </div>
+      </section>
+
+      <!-- TEAMS -->
+      <section id="teams">
+        <h3>Teams & Partners</h3>
+        <div class="grid-3">
+          <div class="team-card">
+            <img src="assets/images/AC_Omonia_logo.svg.png" alt="Omonia Women" style="width:100%; height:120px; object-fit:cover; border-radius:10px;">
+            <h4 style="margin-top:10px">OMONIA WOMEN</h4>
+            <p style="color:var(--muted)">A professional football club in the repbublic of Cyprus that plays in the top division.</p>
+          </div>
+          <div class="team-card">
+            <img src="assets/images/p4f.jpg" alt="Path4Football" style="width:100%; height:120px; object-fit:cover; border-radius:10px;">
+            <h4 style="margin-top:10px">PATH 4 FOOTBALL</h4>
+            <p style="color:var(--muted)">A professional football scouting company with attribute of direct placement</p>
+          </div>
+          <div class="team-card">
+            <img src="assets/images/kapa.jpg" alt="Partner club logo" style="width:100%; height:120px; object-fit:cover; border-radius:10px;">
+            <h4 style="margin-top:10px">KAPA Kajanni</h4>
+            <p style="color:var(--muted)">A professional football club in Findland that plays in the 5th division</p>
+          </div>
+          <div class="team-card">
+            <img src="assets/images/joga sua maneira.jpg" alt="JSM" style="width:100%; height:120px; object-fit:cover; border-radius:10px;">
+            <h4 style="margin-top:10px">JSM</h4>
+            <p style="color:var(--muted)">A sports consultancy and event planner based in Porto, Portugal.</p>
+          </div>
+          <div class="team-card">
+            <img src="assets/images/ppro football trial s.jpg" alt="PROFOOTBALL TRIAL" style="width:100%; height:120px; object-fit:cover; border-radius:10px;">
+            <h4 style="margin-top:10px">PROFOOTBALL TRIAL</h4>
+            <p style="color:var(--muted)">A professional football trial company connecting players with clubs.</p>
+          </div>
+          <div class="team-card">
+            <img src="assets/images/lax global.png" alt="LAX ACADEMY" style="width:100%; height:120px; object-fit:cover; border-radius:10px;">
+            <h4 style="margin-top:10px">LAX ACADEMY</h4>
+            <p style="color:var(--muted)">A football academy focused on youth development and global opportunities.</p>
+            </div>
+          </div>
+             <div class="text-center">
+             <a href="teams.html" class="btn btn-primary">View All Teams <span class="btn-arrow">→</span></a>
+             </div>
+          </section>
+
+          <!-- PLAYERS -->
+          <section id="players">
+            <h3>Players</h3>
+            <!-- players container: populated dynamically from data/projects.json (js/scripts.js) -->
+            <div class="players"></div>
+            <div class="text-center">
+              <a href="players.html" class="btn btn-primary">View All Players <span class="btn-arrow">→</span></a>
+            </div>
+          </section>
+    <!-- NEWS & BLOG -->
+    <section id="news">
+      <h3>Latest News</h3>
+      <div class="news-list"><!-- populated dynamically from data/projects.json (js/scripts.js) --></div>
+         <div class="text-center">
+         <a href="news.html" class="btn btn-primary">View All News <span class="btn-arrow">→</span></a>
+         </div>
+    </section>
+    <!-- LEADERSHIP TEAM -->
+    <section id="leadership-team">
+      <h2>Leadership Team</h2>
+      <div class="team-grid" style="display:flex; gap:24px; justify-content:center; margin-bottom:18px">
+        <div class="team-member card" style="flex:1; min-width:220px; text-align:center">
+          <div style="width:120px; height:120px; margin:0 auto 16px; border-radius:50%; padding:3px; background:linear-gradient(45deg, var(--accent), #7c3aed)">
+            <img src="assets/images/Ajayi Adeniran.jpg" alt="Ajayi Adeniran"
+                 style="width:100%; height:100%; border-radius:50%; object-fit:cover;
+                        border:2px solid var(--bg); box-shadow:0 4px 12px rgba(0,0,0,0.1)" />
+          </div>
+          <h3>AJAYI ADENIRAN</h3>
+          <p style="color:var(--muted)">CEO / AGENT</p>
+          <div style="margin-top:12px">
+            <a href="https://www.instagram.com/member1" target="_blank" style="margin-right:12px; color:var(--accent); text-decoration:none" aria-label="Mack on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="vertical-align:middle;">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/mack-bs-briggs-1a4634135" target="_blank" style="color:var(--accent); text-decoration:none" aria-label="Mack on LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="vertical-align:middle;">
+                <path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v6h-4v-12h4v2.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2 9h4v12H2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M4 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="team-member card" style="flex:1; min-width:220px; text-align:center">
+          <div style="width:120px; height:120px; margin:0 auto 16px; border-radius:50%; padding:3px; background:linear-gradient(45deg, var(--accent), #7c3aed)">
+            <img src="assets/images/MACK.jpeg" alt="Mack BS Briggs" 
+                 style="width:100%; height:100%; border-radius:50%; object-fit:cover; 
+                        border:2px solid var(--bg); box-shadow:0 4px 12px rgba(0,0,0,0.1)" />
+          </div>
+          <h3>MACK BS BRIGGS</h3>
+          <p style="color:var(--muted)">CO-CEO / SCOUT</p>
+          <div style="margin-top:12px">
+            <a href="#" target="_blank" style="margin-right:12px; color:var(--accent); text-decoration:none" aria-label="Abayomi on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="vertical-align:middle;">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <a href="#" target="_blank" style="color:var(--accent); text-decoration:none" aria-label="Abayomi on LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="vertical-align:middle;">
+                <path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v6h-4v-12h4v2.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2 9h4v12H2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M4 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="team-member card" style="flex:1; min-width:220px; text-align:center">
+          <div style="width:120px; height:120px; margin:0 auto 16px; border-radius:50%; padding:3px; background:linear-gradient(45deg, var(--accent), #7c3aed)">
+            <img src="assets/images/abayomi Olushesan.jpg" alt="Abayomi Olushesan" 
+                 style="width:100%; height:100%; border-radius:50%; object-fit:cover;
+                        border:2px solid var(--bg); box-shadow:0 4px 12px rgba(0,0,0,0.1)" />
+          </div>
+          <h3>ABAYOMI OLUSHESAN</h3>
+          <p style="color:var(--muted)">LEGAL COUNSEL</p>
+          <div style="margin-top:12px">
+            <a href="#" target="_blank" style="margin-right:12px; color:var(--accent); text-decoration:none" aria-label="Abayomi on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="vertical-align:middle;">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/member2" target="_blank" style="color:var(--accent); text-decoration:none" aria-label="Ajayi on LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="vertical-align:middle;">
+                <path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v6h-4v-12h4v2.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2 9h4v12H2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M4 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- removed duplicate placeholder member -->
+      </div>
+      <div class="text-center">
+        <a href="team.html" class="btn btn-ghost">See More →</a>
+      </div>
+      </section>
+
+      <!-- SOCIAL CHANNELS SECTION -->
+      <section id="social-channels" style="margin-top:48px; padding:32px; background:linear-gradient(135deg,rgba(14,165,255,0.05),rgba(124,58,237,0.05));border-radius:16px">
+        <h3 style="text-align:center;margin-bottom:24px">Connect With Us</h3>
+        <div style="display:flex;gap:24px;justify-content:center;align-items:center;flex-wrap:wrap">
+          <a href="https://www.instagram.com/" target="_blank" style="display:flex;align-items:center;gap:8px;padding:12px 20px;border:2px solid var(--accent);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:600;transition:all 0.3s" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='transparent';this.style.color='var(--accent)'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"></path><circle cx="16" cy="11.37" r="4" fill="none"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" style="display:flex;align-items:center;gap:8px;padding:12px 20px;border:2px solid var(--accent);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:600;transition:all 0.3s" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='transparent';this.style.color='var(--accent)'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a6 6 0 0 0-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h3z"></path></svg>
+            Facebook
+          </a>
+          <a href="https://www.tiktok.com/" target="_blank" style="display:flex;align-items:center;gap:8px;padding:12px 20px;border:2px solid var(--accent);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:600;transition:all 0.3s" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='transparent';this.style.color='var(--accent)'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0"></path><path d="M12.935.04a9.118 9.118 0 0 1 5.946 2.045 9.118 9.118 0 0 1 2.045 5.946v2.938a9.118 9.118 0 0 1-2.045 5.946 9.118 9.118 0 0 1-5.946 2.045h-2.938a9.118 9.118 0 0 1-5.946-2.045 9.118 9.118 0 0 1-2.045-5.946v-2.938a9.118 9.118 0 0 1 2.045-5.946A9.118 9.118 0 0 1 9.997.04Z"></path></svg>
+            TikTok
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" style="display:flex;align-items:center;gap:8px;padding:12px 20px;border:2px solid var(--accent);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:600;transition:all 0.3s" onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" onmouseout="this.style.background='transparent';this.style.color='var(--accent)'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v6h-4v-12h4v2.2"></path><circle cx="4" cy="9" r="2"></circle><path d="M2 21h4V9H2z"></path></svg>
+            LinkedIn
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- WHATSAPP FLOATING WIDGET -->
+    <a href="https://wa.me/35799641238?text=Hello%20Galaxy%20Sports%20Management" target="_blank" style="position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:999;transition:all 0.3s;animation:float 3s ease-in-out infinite" title="Chat with us on WhatsApp">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371 0-.57 0-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.783 1.14L1.07 3.731l1.386 4.993a9.9 9.9 0 001.516 4.779 9.868 9.868 0 008.407 4.488h.005c5.432 0 9.863-4.431 9.863-9.868 0-2.611-.997-5.067-2.812-6.917a9.895 9.895 0 00-6.956-2.887"/></svg>
+    </a>
+
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+    </style>
+
+    <footer>
+        <div class="card" style="display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap">
+          <div style="flex:1; min-width:220px">
+            <h3>Work with us</h3>
+            <p style="color:var(--muted)">Get in touch to discuss representation, trials or partnerships.</p>
+          </div>
+          <form style="min-width:280px; width:420px; max-width:100%" onsubmit="handleContact(event)">
+            <div style="display:flex; gap:8px; margin-bottom:8px">
+              <input required placeholder="Full name" id="c_name" style="flex:1; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit">
+              <input required placeholder="Email" id="c_email" style="flex:1; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit">
+            </div>
+            <div style="margin-bottom:8px">
+              <input placeholder="Subject" id="c_subject" style="width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit">
+            </div>
+            <div style="margin-bottom:8px">
+              <textarea placeholder="Message" id="c_message" rows="3" style="width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit"></textarea>
+            </div>
+            <div style="text-align:right"><button class="cta" type="submit">Send message</button></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <strong>Galaxy Sports Management Ltd</strong>
+        <div style="color:var(--muted); font-size:13px">© <span id="yr"></span> All rights reserved</div>
+      </div>
+      <div style="color:var(--muted); font-size:13px">
+        Email: info@galaxysports.com • Tel: +35799641238
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Small JS hooks - expand with Copilot or connect to backend
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    function handleContact(e){
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('c_name').value,
+        email: document.getElementById('c_email').value,
+        subject: document.getElementById('c_subject').value,
+        message: document.getElementById('c_message').value
+      }
+      // TODO: submit to backend endpoint (example POST /api/contact)
+      console.log('Contact form submitted', data);
+      alert('Thanks — your message has been recorded (demo).');
+      e.target.reset();
+    }
+
+    // Simple smooth scrolling for nav links
+    document.querySelectorAll('nav a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault(); const id = a.getAttribute('href').slice(1);
+        document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+      })
+    })
+  </script>
+</body>
+</html>

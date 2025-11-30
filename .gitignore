@@ -1,0 +1,18 @@
+# Node artifacts
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+
+# Deploy artifacts
+dist/
+build/
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log

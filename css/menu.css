@@ -1,0 +1,106 @@
+/* Checkbox + label hamburger styles (converted from user-provided snippet)
+   This replaces the previous `.menu` control with an accessible checkbox + label.
+*/
+
+/* reset focus outline hack used in the snippet */
+* { outline: transparent; -webkit-tap-highlight-color: transparent; }
+
+html, body { height: 100%; }
+
+#menu_checkbox { display: none; }
+
+/* The label acts as the visible hamburger button. Position it at top-right */
+label[for="menu_checkbox"] {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  transform-origin: center center;
+  transition: 0.25s ease transform, 0.25s ease opacity;
+  cursor: pointer;
+  z-index: 1001;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+label[for="menu_checkbox"] div {
+  width: 6px;
+  height: 6px;
+  background-color: #fff; /* visible on dark background */
+  margin-left: 0;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  transition: 0.3s ease width, 0.3s ease margin-left, 0.3s ease margin-bottom, 0.3s ease background-color, 0.25s ease transform;
+  display:block;
+}
+
+label[for="menu_checkbox"] div:first-child { width: 22px; transform-origin: left center; }
+label[for="menu_checkbox"] div:nth-child(2) { width: 15px; }
+label[for="menu_checkbox"] div:last-child { width: 30px; margin-bottom: 0; }
+
+/* Checked state rotates label and transforms dots into stacked close-like arrangement */
+#menu_checkbox:checked + label[for="menu_checkbox"] {
+  transform: rotateZ(-90deg);
+}
+
+#menu_checkbox:checked + label[for="menu_checkbox"] div {
+  width: 6px;
+  margin-left: 12px;
+  margin-bottom: 3px;
+  background-color: #ffc107;
+}
+
+/* shrink/opacity helper class applied by JS on scroll */
+.hamburger-scrolling {
+  transform: scale(0.7) !important;
+  opacity: 0.45 !important;
+}
+
+@media (max-width: 480px) {
+  label[for="menu_checkbox"] { width: 30px; height: 30px; }
+  label[for="menu_checkbox"] div:first-child { width:18px }
+  label[for="menu_checkbox"] div:nth-child(2) { width:12px }
+  label[for="menu_checkbox"] div:last-child { width:24px }
+}
+
+/* Navigation menu styling (keeps existing slide-in panel) */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -340px; /* start slightly off-canvas for a clean slide */
+  width: clamp(260px, 28vw, 340px); /* narrower, responsive panel */
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(2,8,23,0.98), rgba(6,12,30,0.96));
+  color: #ffffff;
+  transition: right 0.32s cubic-bezier(.2,.9,.3,1), opacity 0.3s ease;
+  padding: 72px 28px 28px 28px;
+  z-index: 999;
+  box-shadow: -18px 30px 60px rgba(2,8,23,0.45);
+  border-left: 1px solid rgba(255,255,255,0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+#menu_checkbox:checked ~ .nav-menu {
+  right: 0;
+}
+
+.nav-menu .nav-top { display:flex; align-items:center; gap:12px; margin-bottom:18px }
+.nav-menu .nav-top .logo { width:48px; height:48px; border-radius:10px; background:linear-gradient(135deg,var(--accent),#7c3aed); display:flex; align-items:center; justify-content:center; font-weight:800 }
+.nav-menu .nav-top h3 { margin:0; font-size:1.05rem; color:#e6f7ff }
+
+.nav-menu ul { list-style: none; padding: 8px 0 0 0; margin: 0; flex:1 }
+.nav-menu ul li { margin: 16px 0; }
+.nav-menu ul li a { color: #e6eef8; text-decoration: none; font-size: 1.1rem; font-weight:600; transition: color 0.18s ease; }
+.nav-menu ul li a:hover { color: var(--accent); }
+
+.nav-menu .nav-footer { margin-top: auto; display:flex; flex-direction:column; gap:10px }
+.nav-menu .nav-footer .cta { background: var(--accent); color: #05223a; padding: 10px 14px; border-radius:10px; text-align:center; font-weight:700; text-decoration:none }
+
+/* overlay that closes the menu when clicked (label for checkbox) */
+.nav-overlay { position: fixed; inset: 0; background: rgba(2,8,23,0.45); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; z-index: 998; }
+#menu_checkbox:checked ~ .nav-overlay { opacity: 1; pointer-events: auto; }

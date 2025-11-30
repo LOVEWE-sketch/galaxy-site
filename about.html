@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Us - Galaxy Sports Management Ltd</title>
+  <meta name="description" content="Learn more about Galaxy Sports Management Ltd - our mission, values, history and partners." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Enhanced partner logo animation */
+    .partner-logo {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(14,165,255,0.05), rgba(124,58,237,0.05));
+      border-radius: 12px;
+      padding: 16px;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      border: 2px solid transparent;
+    }
+    
+    .partner-logo:hover {
+      transform: translateY(-8px) scale(1.05);
+      background: linear-gradient(135deg, rgba(14,165,255,0.15), rgba(124,58,237,0.15));
+      border-color: var(--accent);
+      box-shadow: 0 12px 32px rgba(14,165,255,0.2);
+    }
+    
+    .partner-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: filter 0.3s ease;
+    }
+    
+    .partner-logo:hover img {
+      filter: brightness(1.1);
+    }
+    
+    /* Stats cards with animation */
+    .stat-card {
+      animation: fadeInScale 0.6s ease-out backwards;
+      animation-delay: calc(var(--index, 0) * 0.1s);
+    }
+    
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    
+    .about-hero {
+      background: linear-gradient(135deg, rgba(14,165,255,0.1), rgba(124,58,237,0.1));
+      padding: 48px 32px;
+      border-radius: 16px;
+      margin-bottom: 48px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .about-hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+  <script defer src="js/menu.js"></script>
+  <script type="module" src="js/scripts.js"></script>
+</head>
+<body>
+  <input type="checkbox" id="menu_checkbox">
+  <label for="menu_checkbox"><div></div><div></div><div></div></label>
+  <nav class="nav-menu">
+    <div class="nav-top">
+      <img src="assets/images/Galaxy Sports Management Ltd Logo.png" alt="logo" style="width:44px;height:44px;object-fit:contain;border-radius:8px;"/>
+      <h3>Galaxy Sports</h3>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="teams.html">Teams</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-footer"><a class="cta" href="#contact">Contact</a></div>
+  </nav>
+  <label for="menu_checkbox" class="nav-overlay" aria-hidden="true"></label>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="assets/images/Galaxy Sports Management Ltd Logo.png" alt="logo" class="brand__logo" style="width:56px;height:56px;object-fit:contain;"/>
+        <div class="brand__title">
+          <h1>Galaxy Sports Management Ltd</h1>
+          <p>Player placement • Trials • Academies</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="teams.html">Teams</a>
+        <a href="players.html">Players</a>
+        <a href="news.html">News</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-hero">
+        <h2>About Galaxy Sports Management</h2>
+        <p style="font-size:1.1rem;color:var(--muted)">Building football careers with integrity and excellence since 2020</p>
+      </section>
+
+      <!-- STORY SECTION -->
+      <section class="card" style="margin-bottom:48px">
+        <h3>Our Story</h3>
+        <p>Galaxy Sports Management Ltd was founded with a vision to revolutionize football talent management. Starting from humble beginnings, we've grown into a respected name in the industry, known for our player-first approach and ethical practices. With a network of scouts, agents, and development officers across multiple continents, we're committed to creating sustainable football careers.</p>
+      </section>
+
+      <!-- STATS SECTION (matching homepage count) -->
+      <section style="margin-bottom:48px">
+        <h3 style="margin-bottom:32px">Our Impact</h3>
+        <div class="stats-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px">
+          <div class="stat-card" style="--index:0">
+            <div class="stat-icon">📈</div>
+            <strong style="font-size:2rem;color:var(--accent)">120+</strong>
+            <span class="stat-label">Players Represented</span>
+          </div>
+          <div class="stat-card" style="--index:1">
+            <div class="stat-icon">🤝</div>
+            <strong style="font-size:2rem;color:var(--accent)">40+</strong>
+            <span class="stat-label">Partner Clubs</span>
+          </div>
+          <div class="stat-card" style="--index:2">
+            <div class="stat-icon">🌍</div>
+            <strong style="font-size:2rem;color:var(--accent)">15+</strong>
+            <span class="stat-label">Countries Active</span>
+          </div>
+          <div class="stat-card" style="--index:3">
+            <div class="stat-icon">🎯</div>
+            <strong style="font-size:2rem;color:var(--accent)">90%</strong>
+            <span class="stat-label">Success Rate</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- MISSION & VALUES -->
+      <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:48px">
+        <div class="card" style="animation:fadeInUp 0.7s ease-out 0.1s both">
+          <h3>Our Mission</h3>
+          <p>To discover, develop and place football talent with integrity and professionalism. We create sustainable careers and foster long-term development for every player we represent.</p>
+          <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+            <div style="padding:8px 12px;background:rgba(14,165,255,0.1);border-radius:6px;font-size:13px;color:var(--accent)">Ethical Representation</div>
+            <div style="padding:8px 12px;background:rgba(14,165,255,0.1);border-radius:6px;font-size:13px;color:var(--accent)">Player Development</div>
+            <div style="padding:8px 12px;background:rgba(14,165,255,0.1);border-radius:6px;font-size:13px;color:var(--accent)">Global Opportunities</div>
+          </div>
+        </div>
+        <div class="card" style="animation:fadeInUp 0.7s ease-out 0.2s both">
+          <h3>Our Values</h3>
+          <p>Integrity • Excellence • Innovation • Player-First Approach • Transparency • Sustainable Growth</p>
+          <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+            <div style="padding:8px 12px;background:rgba(124,58,237,0.1);border-radius:6px;font-size:13px;color:#7c3aed">Trust & Transparency</div>
+            <div style="padding:8px 12px;background:rgba(124,58,237,0.1);border-radius:6px;font-size:13px;color:#7c3aed">Continuous Growth</div>
+            <div style="padding:8px 12px;background:rgba(124,58,237,0.1);border-radius:6px;font-size:13px;color:#7c3aed">Excellence Always</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARTNERS SECTION WITH HOVER ANIMATIONS -->
+      <section style="margin-bottom:48px">
+        <h3 style="margin-bottom:32px">Our Partners</h3>
+        <div class="partners-grid">
+          <div class="partner-logo"><img src="assets/images/ppro football trial s.jpg" alt="PROFOOTBALL TRIAL"></div>
+          <div class="partner-logo"><img src="assets/images/footdraft.png" alt="footdraft"></div>
+          <div class="partner-logo"><img src="assets/images/lax global.png" alt="LAX ACADEMY"></div>
+          <div class="partner-logo"><img src="assets/images/msm czech republic.jpg" alt="MSM"></div>
+          <div class="partner-logo"><img src="assets/images/p4f.jpg" alt="P4F"></div>
+          <div class="partner-logo"><img src="assets/images/sportmate 36-.jpg" alt="sportmate360"></div>
+          <!-- 5 empty spaces for more clubs -->
+          <div class="partner-logo" style="opacity:0.5;cursor:default;border:2px dashed var(--accent)"><div style="text-align:center;color:var(--muted)">Add Club Logo</div></div>
+          <div class="partner-logo" style="opacity:0.5;cursor:default;border:2px dashed var(--accent)"><div style="text-align:center;color:var(--muted)">Add Club Logo</div></div>
+          <div class="partner-logo" style="opacity:0.5;cursor:default;border:2px dashed var(--accent)"><div style="text-align:center;color:var(--muted)">Add Club Logo</div></div>
+          <div class="partner-logo" style="opacity:0.5;cursor:default;border:2px dashed var(--accent)"><div style="text-align:center;color:var(--muted)">Add Club Logo</div></div>
+          <div class="partner-logo" style="opacity:0.5;cursor:default;border:2px dashed var(--accent)"><div style="text-align:center;color:var(--muted)">Add Club Logo</div></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <strong>Galaxy Sports Management Ltd</strong>
+        <div class="copyright">© <span id="yr"></span> All rights reserved</div>
+      </div>
+      <div class="contact-details">
+        Email: info@galaxysports.com • Tel: +357 99 641 238
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

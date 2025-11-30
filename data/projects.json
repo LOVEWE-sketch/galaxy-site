@@ -1,0 +1,113 @@
+{
+  "teams": [],
+  "players": [
+    {
+      "id": 1,
+      "name": "ACACIA SMALL",
+      "age": 22,
+      "position": "CF",
+      "nationality": "Barbados",
+      "currentClub": "Paradise",
+      "photo": "assets/images/acacia small.jpg",
+      "highlights": "A dynamic center forward with a keen eye for goal."
+    },
+    {
+      "id": 2,
+      "name": "Lucy Massaquoi",
+      "age": 26,
+      "position": "LB",
+        "nationality": "Liberia",
+        "currentClub": "Determine Girls Fc",
+      "photo": "assets/images/lucy close shoot with captian band.jpg",
+      "highlights": "Solid defender with great pace and crossing ability."
+    },
+    {
+      "id": 3,
+      "name": "MACK BS BRIGGS",
+      "age": 17,
+      "position": "DM",
+        "nationality": "Liberia",
+        "currentClub": "Free Player",
+      "photo": "assets/images/mack bs briggs action.jpg",
+      "highlights": "Young defensive midfielder with excellent tactical awareness."
+    },
+    {
+      "id": 4,
+      "name": "ELSHADDI ACHEMPONG",
+      "age": 20,
+      "position": "FW",
+      "nationality": "Ghana",
+      "currentClub": "TBD",
+      "photo": "assets/images/elshaddi-achempong.jpg",
+      "highlights": "Talented forward with excellent technical skills and finishing ability."
+    },
+    {
+      "id": 5,
+      "name": "FRED C NAYOU",
+      "age": 21,
+      "position": "MF",
+      "nationality": "Liberia",
+      "currentClub": "TBD",
+      "photo": "assets/images/fred-c-nayou.jpg",
+      "highlights": "Versatile midfielder with strong ball control and vision."
+    },
+    {
+      "id": 6,
+      "name": "NORBERTO OTTO",
+      "age": 0,
+      "position": "GK",
+      "nationality": "ARGENTINA",
+      "currentClub": "CA Adelante",
+      "photo": "assets/images/goalkeeper.jpg",
+      "highlights": "Professional goalkeeper - details to be added."
+    },
+    {
+      "id": 7,
+      "name": "LINDA AMOKA",
+      "age": 26,
+      "position": "CB",
+      "nationality": "Ghana",
+      "currentClub": "OMONIA WOMEN",
+      "photo": "assets/images/linda-amoka-official.jpg",
+      "highlights": "Strong centre back with excellent positioning and leadership at the back."
+    },
+    {
+      "id": 8,
+      "name": "BERNICE SHAZELLE",
+      "age": 26,
+      "position": "CF",
+      "nationality": "England",
+      "currentClub": "TBD",
+      "photo": "assets/images/lisa-shazelle.jpg",
+      "highlights": "Creative centre forward with excellent movement and finishing."
+    },
+    {
+      "id": 9,
+      "name": "TARTEV KHACHATRYAN",
+      "age": 18,
+      "position": "FW",
+      "nationality": "Armenia",
+      "currentClub": "PUYNIK",
+      "photo": "assets/images/tartev-kchernian.jpg",
+      "highlights": "Strong wing forward with excellent aerial presence and goal contribution."
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "SANTIAGO DE SOUSA SIGN FOR KAPA KAJANNI",
+      "date": "2025-04-01",
+      "excerpt": "Talented Venezeula Striker signed professional contract with kapa kajanni",
+      "content": "We are delighted to announce that Santiago De Sousahas signed for the 5th division side Kapa Kajanni in Finland...",
+      "image": "santiago signed flyer.JPG"
+    },
+    {
+      "id": 2,
+      "title": "Summer Trials Announced",
+      "date": "2025-10-28",
+      "excerpt": "Galaxy Sports Management announces summer trials with partner clubs across Europe",
+      "content": "We are excited to announce our summer trial program with multiple partner clubs...",
+      "image": "trial downlaod.jpg"
+    }
+  ]
+}
