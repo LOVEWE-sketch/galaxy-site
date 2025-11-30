@@ -186,6 +186,19 @@ document.addEventListener('DOMContentLoaded', function() {
             subject: document.getElementById('c_subject').value,
             message: document.getElementById('c_message').value
         };
+        // If a public form endpoint is configured (e.g. Microsoft Forms / Google Forms), open it in a new tab and pass a simple querystring.
+        // Configure this in your site by setting a global `window.contactRedirectUrl` to the target form URL.
+        if(window.contactRedirectUrl && typeof window.contactRedirectUrl === 'string' && window.contactRedirectUrl.length){
+            try{
+                const qs = new URLSearchParams(data).toString();
+                window.open(window.contactRedirectUrl + (window.contactRedirectUrl.includes('?') ? '&' : '?') + qs, '_blank');
+                alert('Opening external contact form to submit your message.');
+                e.target.reset();
+                return;
+            }catch(err){
+                console.warn('Failed to redirect contact form:', err);
+            }
+        }
         console.log('Contact form submitted', data);
         alert('Thanks — your message has been recorded (demo).');
         e.target.reset();
@@ -225,4 +238,27 @@ document.addEventListener('DOMContentLoaded', function() {
         distributeAnimations(elements, index + 1);
         animManager.observe(elements);
     });
+
+    // Player image lightbox: if any image has .player-image, connect a simple lightbox
+    (function initPlayerLightbox(){
+        const imgs = document.querySelectorAll('img.player-image');
+        if(!imgs || !imgs.length) return;
+
+        // create lightbox markup
+        let lb = document.querySelector('.lightbox');
+        if(!lb){
+            lb = document.createElement('div'); lb.className = 'lightbox';
+            lb.innerHTML = '<button class="lb-close" aria-label="Close">×</button><img alt="Player image (full)">';
+            document.body.appendChild(lb);
+        }
+        const lbImage = lb.querySelector('img');
+        const closeBtn = lb.querySelector('.lb-close');
+
+        function open(src){ lbImage.src = src; lb.classList.add('open'); document.body.style.overflow='hidden'; }
+        function close(){ lb.classList.remove('open'); lbImage.src = ''; document.body.style.overflow=''; }
+
+        imgs.forEach(img => img.addEventListener('click', () => open(img.src)));
+        lb.addEventListener('click', e=>{ if(e.target === lb || e.target === closeBtn) close(); });
+        document.addEventListener('keydown', e=>{ if(e.key === 'Escape') close(); });
+    })();
 });

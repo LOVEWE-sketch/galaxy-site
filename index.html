@@ -12,6 +12,16 @@
   <link rel="stylesheet" href="css/animations.css">
   <script defer src="js/menu.js"></script>
   <script type="module" src="js/scripts.js"></script>
+  <!--
+    Example: redirect contact form submissions to an external form service (Microsoft Forms / Google Forms).
+    To enable, add a script with your form URL. Example (uncomment + replace with your form link):
+
+    <script>
+      // window.contactRedirectUrl = 'https://forms.office.com/your-form-id';
+    </script>
+
+    This will cause the contact handler to open the external form with name/email/subject/message as query params.
+  -->
   <style>
     /* BASE LAYOUT (starter CSS) - expand with Copilot-generated stylesheet */
     :root{
@@ -480,7 +490,18 @@
         subject: document.getElementById('c_subject').value,
         message: document.getElementById('c_message').value
       }
-      // TODO: submit to backend endpoint (example POST /api/contact)
+      // If you want messages submitted to an external form service (Google Forms, Microsoft Forms, etc.)
+      // configure this by adding a small script tag to your site that sets window.contactRedirectUrl = 'https://forms.office.com/your-form-url';
+      if(window.contactRedirectUrl && typeof window.contactRedirectUrl === 'string' && window.contactRedirectUrl.length){
+        try{
+          const qs = new URLSearchParams(data).toString();
+          window.open(window.contactRedirectUrl + (window.contactRedirectUrl.includes('?') ? '&' : '?') + qs, '_blank');
+          alert('Opening external contact form to submit your details.');
+          e.target.reset();
+          return;
+        }catch(err){ console.warn('Contact redirect failed', err); }
+      }
+      // Default demo behaviour: record in browser console
       console.log('Contact form submitted', data);
       alert('Thanks — your message has been recorded (demo).');
       e.target.reset();
