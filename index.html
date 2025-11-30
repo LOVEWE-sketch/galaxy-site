@@ -189,8 +189,12 @@
         </div>
       </div>
 
-      <div class="hero__image card" style="position:relative; background-image: url('assets/images/Galaxy\ Sports\ Management\ Ltd.jpg'); background-size: cover; background-position: center;">
-        <!-- Hero image -->
+      <div class="hero__image card" style="position:relative;">
+        <!-- Hero image: use an img with object-fit:contain so details are preserved across viewports -->
+        <picture style="width:100%;height:100%;display:block;">
+          <!-- Add responsive sources here if you provide alternative sizes in assets/images/ -->
+          <img class="hero-img" src="assets/images/Galaxy Sports Management Ltd.jpg" alt="Galaxy Sports Management" loading="lazy" style="width:100%;height:100%;display:block;">
+        </picture>
       </div>
 
       <script>
