@@ -127,12 +127,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Format date nicely
                     const dateObj = new Date(item.date);
                     const dateStr = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-                    newsCard.innerHTML = `
-                    <img src="${imageSrc}" alt="${item.title}" style="width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:12px;" onerror="this.onerror=null;this.src='https://via.placeholder.com/800x200?text=Image+missing'">
-                    <div style="font-size:12px;color:var(--accent);margin-bottom:8px;font-weight:600">${dateStr}</div>
-                    <h4><a href="${articleLink}" style="color:inherit;text-decoration:none">${item.title}</a></h4>
-                    <p>${item.excerpt}${readAnchor}</p>
-                `;
+                                        newsCard.innerHTML = `
+                                        <div class="news-media"><img class="news-thumb" src="${imageSrc}" alt="${item.title}" onerror="this.onerror=null;this.src='assets/images/default-player.svg'"></div>
+                                        <div class="news-card-body">
+                                            <div class="news-card-meta"><div style="font-size:12px;color:var(--accent);font-weight:600">${dateStr}</div></div>
+                                            <h4 class="news-card-title"><a href="${articleLink}" style="color:inherit;text-decoration:none">${item.title}</a></h4>
+                                            <p class="news-card-excerpt">${item.excerpt}${readAnchor}</p>
+                                        </div>
+                                `;
                     newsContainer.appendChild(newsCard);
                 });
             }
