@@ -48,9 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const safePlayerSrc = (player.photo && player.photo.toString().trim())
                     ? (player.photo.startsWith('http') || player.photo.startsWith('assets/') ? player.photo : `assets/images/${player.photo}`)
                     : 'https://via.placeholder.com/320x180?text=No+photo';
-                                const profileHref = `player-${player.id}.html`;
+                                // If the player has an external wiki or link, open that in a new tab;
+                                // otherwise use the internal player profile page.
+                                const profileHref = player.wiki ? player.wiki : `player-${player.id}.html`;
+                                const isExternal = !!player.wiki;
                                 playerCard.innerHTML = `
-                                        <a href="${profileHref}" style="color:inherit;text-decoration:none;display:block">
+                                        <a href="${profileHref}" ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''} style="color:inherit;text-decoration:none;display:block">
                                             <img src="${safePlayerSrc}" alt="${player.name}" onerror="this.onerror=null;this.src='assets/images/default-player.svg'">
                                             <h4>${player.name}</h4>
                                         </a>
@@ -82,9 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     article.setAttribute('data-club', player.currentClub || '');
                     // If player.photo is empty use a visible placeholder so the grid remains consistent
                     const personPhotoSrc = (player.photo && player.photo.toString().trim()) ? (player.photo.startsWith('http') || player.photo.startsWith('assets/') ? player.photo : `assets/images/${player.photo}`) : 'https://via.placeholder.com/240x180?text=No+photo';
-                    const playerHref = `player-${player.id}.html`;
+                    const playerHref = player.wiki ? player.wiki : `player-${player.id}.html`;
+                    const external = !!player.wiki;
                     article.innerHTML = `
-                        <a href="${playerHref}" style="color:inherit;text-decoration:none;display:flex;gap:12px;align-items:center">
+                        <a href="${playerHref}" ${external ? 'target="_blank" rel="noopener noreferrer"' : ''} style="color:inherit;text-decoration:none;display:flex;gap:12px;align-items:center">
                           <div class="person-photo" style="background-image:url('${personPhotoSrc}')" aria-hidden="true"></div>
                           <div class="person-body">
                               <h4 class="person-name">${player.name}</h4>
