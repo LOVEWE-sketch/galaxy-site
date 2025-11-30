@@ -158,10 +158,27 @@ section{margin-top:24px}
 /* News */
 .news-list{
   display:grid;
-  /* larger, square-first layout: responsive 3-up on desktop, 2-up on medium, 1-up on mobile */
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap:18px;
   align-items:start;
+  /* Fixed columns for consistent grid:
+     - mobile: 1 column
+     - tablet: 2 columns
+     - desktop: 3 columns (>= 980px)
+     - large screens: 4 columns (>= 1400px)
+  */
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 640px) {
+  .news-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 980px) {
+  .news-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1400px) {
+  .news-list { grid-template-columns: repeat(4, 1fr); }
 }
 
 /* Process / How it works: a clean numbered step layout */

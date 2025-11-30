@@ -128,13 +128,49 @@ document.addEventListener('DOMContentLoaded', function() {
                     const dateObj = new Date(item.date);
                     const dateStr = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
                                         newsCard.innerHTML = `
-                                        <div class="news-media"><img class="news-thumb" src="${imageSrc}" alt="${item.title}" onerror="this.onerror=null;this.src='assets/images/default-player.svg'"></div>
+                                        <div class="news-media"><img class="news-thumb" src="${imageSrc}" data-src="${imageSrc}" alt="${item.title}" onerror="this.onerror=null;this.src='assets/images/default-player.svg'"></div>
                                         <div class="news-card-body">
                                             <div class="news-card-meta"><div style="font-size:12px;color:var(--accent);font-weight:600">${dateStr}</div></div>
                                             <h4 class="news-card-title"><a href="${articleLink}" style="color:inherit;text-decoration:none">${item.title}</a></h4>
                                             <p class="news-card-excerpt">${item.excerpt}${readAnchor}</p>
                                         </div>
                                 `;
+                                            // attempt to build responsive srcset if alternate sizes exist
+                                            (function(){
+                                                const img = newsCard.querySelector('img.news-thumb');
+                                                if(!img) return;
+                                                // try to generate srcset for local assets paths
+                                                async function buildSrcsetFor(imgEl){
+                                                    const src = imgEl.getAttribute('data-src') || imgEl.src;
+                                                    if(!src || !src.startsWith('assets/')) return;
+                                                    // derive base & ext
+                                                    const m = src.match(/^(.*?\/)?([^\/]+?)(\.[a-zA-Z0-9]+)$/);
+                                                    if(!m) return;
+                                                    const path = (m[1] || '') + m[2];
+                                                    const ext = m[3] || '';
+                                                    const candidates = [
+                                                        {s: '-320', w: '320w'},
+                                                        {s: '-640', w: '640w'},
+                                                        {s: '-960', w: '960w'},
+                                                        {s: '-1200', w: '1200w'}
+                                                    ];
+                                                    const found = [];
+                                                    for(const c of candidates){
+                                                        const url = `${path}${c.s}${ext}`;
+                                                        try{
+                                                            const res = await fetch(url, { method: 'HEAD' });
+                                                            if(res && res.ok){ found.push(`${url} ${c.w}`); }
+                                                        }catch(_){ /* ignore */ }
+                                                    }
+                                                    if(found.length){
+                                                        // set srcset + sizes (approximate guidance) for responsive selection
+                                                        imgEl.srcset = found.join(', ');
+                                                        imgEl.sizes = '(min-width:1400px) 23vw, (min-width:980px) 30vw, (min-width:640px) 48vw, 100vw';
+                                                    }
+                                                }
+                                                // fire and forget, browser will use src until srcset available
+                                                buildSrcsetFor(img).catch(()=>{});
+                                            })();
                     newsContainer.appendChild(newsCard);
                 });
             }
